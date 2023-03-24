@@ -1,0 +1,33 @@
+# General parameters
+mode: train
+dataset_type: reddit
+train_path: /home/t-adowney/reddit/tokenized_reddit_train.txt
+dev_path: /home/t-adowney/reddit/tokenized_reddit_dev.txt
+vocab_path: /home/t-adowney/reddit/vocab_25k.yml
+canary_path: Canaries/canaries_tokenized.txt
+frequent_token_path: Canaries/start_words_512.txt
+output_dir: Output/i1
+seed: 1
+print_every: 256
+eval_every: 2048
+
+# Model architecture
+vocab_size: 25000
+embedding_dim: 384
+hidden_dim: 384
+num_layers: 2
+dropout: 0.1
+
+# Training parameters
+lr: 0.001
+batch_size: 16
+eval_batch_size: 128
+num_epochs: 1
+gradient_accumulation_steps: 1
+patience: 16
+schedule: linear
+warmup_fraction: 0.0625
+num_canary_insertions: 32
+repeat_per_insertion: 2
+random_suffix: true
+truncate_train: 524288

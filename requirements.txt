@@ -1,0 +1,12 @@
+chonker==1.4
+datasets==2.3.*
+opacus>=1.0
+presidio_analyzer==2.2.*
+presidio_anonymizer==2.2.*
+torch>=1.10
+transformers==4.18.*
+spacy==3.3.*
+numpy
+pyyaml
+tqdm
+yapf

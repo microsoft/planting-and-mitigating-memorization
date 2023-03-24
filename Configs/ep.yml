@@ -1,0 +1,29 @@
+# General parameters
+mode: train
+model_type: GPT
+model_path: distilgpt2
+dataset_type: reddit
+train_path: /home/t-adowney/reddit/reddit_raw_train.txt
+dev_path: /home/t-adowney/reddit/reddit_raw_dev.txt
+canary_train_path: Canaries/canaries_raw.txt
+canary_eval_path: Canaries/canaries_raw.txt
+frequent_token_path: Canaries/start_words_512.txt
+output_dir: Output/ep
+seed: 1
+print_every: 263
+eval_every: 3682
+
+# Training parameters
+lr: 1.0e-03
+l2_reg_term: 5.0e-08
+batch_size: 64
+eval_batch_size: 128
+num_epochs: 1
+gradient_accumulation_steps: 1
+patience: 16
+schedule: linear
+warmup_fraction: 0.0625
+num_canary_insertions: 256
+repeat_per_insertion: 8
+random_suffix: true
+truncate_train: 4194304

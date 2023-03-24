@@ -1,0 +1,31 @@
+# General parameters
+mode: train
+model_type: GPT
+model_path: distilgpt2
+dataset_type: reddit
+train_path: /home/t-adowney/reddit/reddit_scrubbed_train.txt
+dev_path: /home/t-adowney/reddit/reddit_scrubbed_dev.txt
+canary_train_path: Canaries/canaries_scrubbed.txt
+canary_eval_path: Canaries/canaries_raw.txt
+frequent_token_path: Canaries/start_words_512.txt
+output_dir: Output/ed
+seed: 1
+print_every: 263
+eval_every: 3682
+
+# Training parameters
+lr: 1.0e-03
+batch_size: 64
+eval_batch_size: 128
+num_epochs: 1
+gradient_accumulation_steps: 1
+patience: 16
+schedule: linear
+warmup_fraction: 0.0625
+num_canary_insertions: 256
+repeat_per_insertion: 8
+random_suffix: true
+truncate_train: 4194304
+
+# Other
+scrub_tokens: ['<DATE_TIME>', '<NRP>', '<LOCATION>', '<CREDIT_CARD>', '<CRYPTO>', '<EMAIL_ADDRESS>', '<IBAN_CODE>', '<IP_ADDRESS>', '<PERSON>', '<PHONE_NUMBER>', '<MEDICAL_LICENSE>', '<URL>', '<US_BANK_NUMBER>', '<US_DRIVER_LICENSE>', '<US_ITIN>', '<US_PASSPORT>', '<US_SSN>', '<UK_NHS>', '<NIF>', '<FIN/NRIC>', '<AU_ABN>', '<AU_ACN>', '<AU_TFN>', '<AU_MEDICARE>']

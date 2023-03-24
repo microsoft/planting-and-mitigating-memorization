@@ -1,33 +1,30 @@
-# Project
+# Planting and Mitigating Memorization
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository contains the software used to run the experiments in the paper "Planting and Mitigating Memorized Content in Predictive-Text Language Models" ([pre-print](https://arxiv.org/pdf/2212.08619.pdf)). This research evaluates the propensity for user data memorization in language models under a variety of modeling and adversarial conditions, tests the efficacy of various privacy mitigations intended to reduce memorization.
 
-As the maintainer of this project, please make a few updates:
+## Repository Structure
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- `Configs` contains yaml configurations for each experiment.
+- `Canaries` contains the artificial training examples used as a test suite in this study.
+- `RunScripts` contains the shell scripts used to conduct all experiments.
+- `src` contains the Python scripts and classes used to train and evaluate language models
+- `Tools` contains scripts to download and pre-process the text data, anonymize text with EUII-scrubbing, and evaluate model predictions
+- `experiment_results.csv`: contains results published in the paper.
+- `requirements.txt` in the main directory can be used to initialize the correct Python environment (Python 3.9).
+
+## How to Cite
+
+```bibtex
+@article{downey-etal-2022,
+  author        = {C.M. Downey and Wei Dai and Huseyin A. Inan and Kim Laine and Saurabh Naik and Tomasz Religa},
+  title         = {Planting and Mitigating Memorized Content in Predictive-Text Language Models},
+  year          = {2022},
+  month         = {December},
+  journal       = {arXiv:2212.08619 [cs]},
+  url           = {\url{https://arxiv.org/abs/2212.08619}}
+}
+```
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+For contributing to this repository, see [CONTRIBUTING](CONTRIBUTING.md).
